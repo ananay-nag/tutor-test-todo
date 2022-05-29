@@ -1,0 +1,566 @@
+{
+	"info": {
+		"_postman_id": "d5f21730-9d2d-4f96-beae-28398016f0b4",
+		"name": "TutorBin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6773672"
+	},
+	"item": [
+		{
+			"name": "GENERATE_TOKEN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "bin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "tutor",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"ananynag@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/todo/generate-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"todo",
+						"generate-token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GENERATE_TOKEN",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"ananynag@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/todo/generate-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"todo",
+								"generate-token"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "CREATE_TASK",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhbmFueW5hZ0BnbWFpbC5jb20iLCJzZXNzaW9uIjoiNjI5MzZkMzEzZThjM2ZiZjliMTQzYTQwIiwiaWF0IjoxNjUzODI4OTEzLCJleHAiOjE2NTM5MTUzMTN9.zjsCnPvf4fiQ4o4LYt0EEK3LaCplWahLOG5mUy-Lru4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"\",\n    \"description\": \"This is myfirst task\",\n    \"list\": [\n        \"task1\",\n        \"task2\",\n        \"task3\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/todo/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"todo",
+						"task"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CREATE_TASK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"description\": \"This is myfirst task\",\n    \"list\": [\n        \"task1\",\n        \"task2\",\n        \"task3\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/todo/task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"todo",
+								"task"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "TASK_LIST",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhbmFueW5hZ0BnbWFpbC5jb20iLCJzZXNzaW9uIjoiNjI5MzZkMzEzZThjM2ZiZjliMTQzYTQwIiwiaWF0IjoxNjUzODI4OTEzLCJleHAiOjE2NTM5MTUzMTN9.zjsCnPvf4fiQ4o4LYt0EEK3LaCplWahLOG5mUy-Lru4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"taskIds\":[\"62936edb9093940d96753ad6\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/todo/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"todo",
+						"list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "TASK_LIST",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskIds\":[\"62936edb9093940d96753ad6\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/todo/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"todo",
+								"list"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "UPDATE_TASK",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhbmFueW5hZ0BnbWFpbC5jb20iLCJzZXNzaW9uIjoiNjI5MzZkMzEzZThjM2ZiZjliMTQzYTQwIiwiaWF0IjoxNjUzODI4OTEzLCJleHAiOjE2NTM5MTUzMTN9.zjsCnPvf4fiQ4o4LYt0EEK3LaCplWahLOG5mUy-Lru4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"taskId\":\"62936edb9093940d96753ad6\",\n    \"name\":\"Second Task\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/todo/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"todo",
+						"task"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UPDATE_TASK",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskId\":\"62936edb9093940d96753ad6\",\n    \"name\":\"Second Task\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/todo/task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"todo",
+								"task"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,PATCH"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "387"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"183-OAfdB7/PCAIX2Q+kO4kDc7m6UtA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 May 2022 13:47:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseData\": {\n        \"task\": {\n            \"_id\": \"62936edb9093940d96753ad6\",\n            \"name\": \"Second Task\",\n            \"description\": \"This is myfirst task\",\n            \"list\": [\n                \"task1\",\n                \"task2\",\n                \"task3\"\n            ],\n            \"status\": 1,\n            \"addedBy\": \"ananynag@gmail.com\",\n            \"createdAt\": \"2022-05-29T13:02:19.648Z\",\n            \"updatedAt\": \"2022-05-29T13:47:33.070Z\",\n            \"__v\": 0\n        },\n        \"message\": \"Todo Task updated successfully\",\n        \"code\": 200\n    },\n    \"message\": \"success\",\n    \"success\": true,\n    \"responseCode\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "UPDATE_STATUS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhbmFueW5hZ0BnbWFpbC5jb20iLCJzZXNzaW9uIjoiNjI5MzZkMzEzZThjM2ZiZjliMTQzYTQwIiwiaWF0IjoxNjUzODI4OTEzLCJleHAiOjE2NTM5MTUzMTN9.zjsCnPvf4fiQ4o4LYt0EEK3LaCplWahLOG5mUy-Lru4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"taskId\":\"62936edb9093940d96753ad6\",\n    \"status\":\"4\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/todo/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"todo",
+						"status"
+					]
+				},
+				"description": "// OPEN = 1, IN_PROGRESS = 2, DONE = 3, DELETED = 4,"
+			},
+			"response": [
+				{
+					"name": "UPDATE_STATUS",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskId\":\"62936edb9093940d96753ad6\",\n    \"status\":\"4\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/todo/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"todo",
+								"status"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,PATCH"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "162"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a2-fzS4ptkW5C7jWElC9yX+9XyWwBw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 May 2022 14:28:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseData\": {\n        \"name\": \"DataNotFound\",\n        \"code\": 400,\n        \"message\": \"Task deleted or not exist\"\n    },\n    \"message\": \"Task deleted or not exist\",\n    \"success\": false,\n    \"responseCode\": 400\n}"
+				}
+			]
+		}
+	]
+}
